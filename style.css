@@ -1,0 +1,243 @@
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #000000 0%, #111111 100%);
+    color: #ffffff;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+h1 {
+    color: darkgoldenrod;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+/* ===== SEÇÕES ===== */
+section {
+    flex: 1 1 300px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+    border: 2px solid darkgoldenrod;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #282828;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 580px;
+    /* ou outro valor que se ajuste bem */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 25px #3b3b3b;
+}
+
+h2 {
+    color: darkgoldenrod;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ===== IMAGEM E LEGENDA ===== */
+figure {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+figure img {
+    border-radius: 10px;
+    border: 2px solid darkgoldenrod;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 3px 3px 10px #1c1c1c;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #c0a040;
+    margin-top: 5px;
+}
+
+/* ===== PARÁGRAFOS ===== */
+p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #2a2a2a;
+    font-size: 0.9rem;
+    color: #b8b8b8;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== TÍTULO ANIMADO DOURADO ===== */
+.titulo-animado {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilho 4s infinite linear;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+@keyframes brilho {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* ===== EFEITO DE ZOOM NAS IMAGENS ===== */
+figure img {
+    border-radius: 10px;
+    border: 2px solid darkgoldenrod;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 3px 3px 10px #1c1c1c;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(218, 165, 32, 0.4);
+}
+
+/* ===== CENTRALIZAÇÃO DO TÍTULO ANIMADO ===== */
+.titulo-animado {
+    display: block;
+    width: 100%;
+    /* ocupa toda a linha */
+    text-align: center;
+    /* centraliza o texto */
+    margin: 40px 0 20px 0;
+    /* espaçamento em cima e embaixo */
+
+    background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilho 4s infinite linear;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+/* ===== MENU FIXO ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #111;
+    border-bottom: 2px solid darkgoldenrod;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: darkgoldenrod;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* ===== ANIMAÇÃO SUAVE ===== */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.voltar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: darkgoldenrod;
+    color: #000;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.4);
+}
+
+.voltar:hover {
+    background-color: gold;
+    transform: translateY(-3px);
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
